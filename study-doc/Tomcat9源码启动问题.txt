@@ -46,7 +46,7 @@ Tomcat9中有部分代码使用CompilerOptions.VERSION_1_9  来判断java虚拟�
 问题3
 原因是我们直接启动org.apache.catalina.startup.Bootstrap的时候没有加载org.apache.jasper.servlet.JasperInitializer，从而无法编译JSP。
 
-解决办法是在tomcat的源码org.apache.catalina.startup.ContextConfig中的configureStart函数中手动将JSP解析器初始化：
+解决办法是在tomcat的源码org.apache.catalina.startup.ContextConfig 中的configureStart函数中手动将JSP解析器初始化：
 
 添加代码：context.addServletContainerInitializer(new JasperInitializer(), null);
 
@@ -69,3 +69,5 @@ context.addServletContainerInitializer(new JasperInitializer(), null)
 版权声明：本文为CSDN博主「为了更好的明天而战」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/qq_33135813/article/details/88216149
 
+
+Tomcat8之后的IO操作默认是:NIO

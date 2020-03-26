@@ -33,7 +33,7 @@ import org.apache.catalina.startup.Tomcat;
 import trailers.ResponseTrailers;
 
 
-public class TestStream extends Http2TestBase {
+public class  TestStream extends Http2TestBase {
 
     /*
      * https://bz.apache.org/bugzilla/show_bug.cgi?id=61120

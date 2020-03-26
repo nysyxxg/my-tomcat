@@ -1,4 +1,5 @@
-
+Tomcat的启动类：
+org.apache.catalina.startup.Bootstrap
 添加VM options
 -Dcatalina.home=catalina-home
 -Dcatalina.base=catalina-home

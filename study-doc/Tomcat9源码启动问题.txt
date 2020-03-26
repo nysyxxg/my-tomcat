@@ -1,5 +1,5 @@
 
-Ìí¼ÓVM options
+æ·»åŠ VM options
 -Dcatalina.home=catalina-home
 -Dcatalina.base=catalina-home
 -Djava.endorsed.dirs=catalina-home/endorsed
@@ -18,53 +18,53 @@
 -Djava.util.logging.config.file=E://Tomcat9_Src//tomcat/conf/logging.properties
 
 
-ÎÊÌâ1£º
+é—®é¢˜1ï¼š
 Error:java: Annotation processing is not supported for module cycles. Please ensure that all modules from cycle [WEB-INF,tomcat,WEB-INF1,dist,WEB-INF2] are excluded from annotation processing
 
 http://ddrv.cn/a/321782
-ÏÂÃæÕâ¸ö´íÎóµÄ´ó¸ÅÒâË¼ÊÇ£ºÄ£¿éÖ®¼äµÄ»¥ÏàÒÀÀµ
+ä¸‹é¢è¿™ä¸ªé”™è¯¯çš„å¤§æ¦‚æ„æ€æ˜¯ï¼šæ¨¡å—ä¹‹é—´çš„äº’ç›¸ä¾èµ–
 
 Error:java: Annotation processing is not supported for module cycles. Please ensure that all modules from cycle [web_dao,web_service] are excluded from annotation processing
 
-´¦ÀíÄ£¿éÖ®¼äµÄÒÀÀµ¹ØÏµ£¨Ä£¿éÖ®¼ä²»ÄÜÓĞÒÀÀµ£©
+å¤„ç†æ¨¡å—ä¹‹é—´çš„ä¾èµ–å…³ç³»ï¼ˆæ¨¡å—ä¹‹é—´ä¸èƒ½æœ‰ä¾èµ–ï¼‰
 
-ÎÊÌâ2£º
+é—®é¢˜2ï¼š
 E:\Tomcat9_Src\tomcat\java\org\apache\jasper\compiler\JDTCompiler.java
-Error:(320, 45) java: ÕÒ²»µ½·ûºÅ
-  ·ûºÅ:   ±äÁ¿ VERSION_9
-  Î»ÖÃ: Àà org.eclipse.jdt.internal.compiler.impl.CompilerOptions
-  
- ¸ü¸ÄÔ´´úÂë
-Tomcat9ÖĞÓĞ²¿·Ö´úÂëÊ¹ÓÃCompilerOptions.VERSION_1_9  À´ÅĞ¶ÏjavaĞéÄâ»ú°æ±¾£¬ÀïÃæÉæ¼°1.9°æ±¾µÄjvm£¬ÎÒ»úÆ÷ÉÏÊ¶±ğ²»ÁË¡£
+Error:(320, 45) java: æ‰¾ä¸åˆ°ç¬¦å·
+  ç¬¦å·:   å˜é‡ VERSION_9
+  ä½ç½®: ç±» org.eclipse.jdt.internal.compiler.impl.CompilerOptions
 
-ÔÚjava/org/apache/jasper/compiler/JDTCompiler.javaÀàÖĞ°ÑÉÏÊö´úÂëÕÒ³ö£¬É¾³ı¼´¿É£¬×Ü¹²ÓĞ3´¦¡£
- 
+ æ›´æ”¹æºä»£ç 
+Tomcat9ä¸­æœ‰éƒ¨åˆ†ä»£ç ä½¿ç”¨CompilerOptions.VERSION_1_9  æ¥åˆ¤æ–­javaè™šæ‹Ÿæœºç‰ˆæœ¬ï¼Œé‡Œé¢æ¶‰åŠ1.9ç‰ˆæœ¬çš„jvmï¼Œæˆ‘æœºå™¨ä¸Šè¯†åˆ«ä¸äº†ã€‚
 
-  
+åœ¨java/org/apache/jasper/compiler/JDTCompiler.javaç±»ä¸­æŠŠä¸Šè¿°ä»£ç æ‰¾å‡ºï¼Œåˆ é™¤å³å¯ï¼Œæ€»å…±æœ‰3å¤„ã€‚
 
-ÎÊÌâ3
-Ô­ÒòÊÇÎÒÃÇÖ±½ÓÆô¶¯org.apache.catalina.startup.BootstrapµÄÊ±ºòÃ»ÓĞ¼ÓÔØorg.apache.jasper.servlet.JasperInitializer£¬´Ó¶øÎŞ·¨±àÒëJSP¡£
 
-½â¾ö°ì·¨ÊÇÔÚtomcatµÄÔ´Âëorg.apache.catalina.startup.ContextConfigÖĞµÄconfigureStartº¯ÊıÖĞÊÖ¶¯½«JSP½âÎöÆ÷³õÊ¼»¯£º
 
-Ìí¼Ó´úÂë£ºcontext.addServletContainerInitializer(new JasperInitializer(), null);
 
-·½·¨£º     protected synchronized void configureStart() {
+é—®é¢˜3
+åŸå› æ˜¯æˆ‘ä»¬ç›´æ¥å¯åŠ¨org.apache.catalina.startup.Bootstrapçš„æ—¶å€™æ²¡æœ‰åŠ è½½org.apache.jasper.servlet.JasperInitializerï¼Œä»è€Œæ— æ³•ç¼–è¯‘JSPã€‚
+
+è§£å†³åŠæ³•æ˜¯åœ¨tomcatçš„æºç org.apache.catalina.startup.ContextConfigä¸­çš„configureStartå‡½æ•°ä¸­æ‰‹åŠ¨å°†JSPè§£æå™¨åˆå§‹åŒ–ï¼š
+
+æ·»åŠ ä»£ç ï¼šcontext.addServletContainerInitializer(new JasperInitializer(), null);
+
+æ–¹æ³•ï¼š     protected synchronized void configureStart() {
   webConfig();
         context.addServletContainerInitializer(new JasperInitializer(), null);
 
-ÎÊÌâ4£º
+é—®é¢˜4ï¼š
 
 Error:osgi: [tomcat] Invalid value for Bundle-Version, 10.0.0-M3-dev does not match [0-9]{1,9}(\.[0-9]{1,9}(\.[0-9]{1,9}(\.[0-9A-Za-z_-]+)?)?)?
 
-4.È»ºóÆô¶¯,¿ÉÄÜ»áÓĞÒÔÏÂ´íÎó
+4.ç„¶åå¯åŠ¨,å¯èƒ½ä¼šæœ‰ä»¥ä¸‹é”™è¯¯
 
-1.Error:osgi: [apache-tomcat-8.5.20-src] Invalid value for Bundle-Version, @VERSION@ does not match [0-9]{1,9}(.[0-9]{1,9}(.[0-9]{1,9}(.[0-9A-Za-z_-]+)?)?)? Ö»ĞèÒª½«@version@¸ÄÎª1.1¾Í¿ÉÒÔÓÃÁË
+1.Error:osgi: [apache-tomcat-8.5.20-src] Invalid value for Bundle-Version, @VERSION@ does not match [0-9]{1,9}(.[0-9]{1,9}(.[0-9]{1,9}(.[0-9A-Za-z_-]+)?)?)? åªéœ€è¦å°†@version@æ”¹ä¸º1.1å°±å¯ä»¥ç”¨äº†
 
-2.½øÈëlocalhost:xxx Ò³ÃæÎŞ·¨½øÈëjspÒ³ÃæÃ»ÓĞ³õÊ¼»¯,½â¾ö°ì·¨ÊÇÔÚtomcatµÄÔ´Âëorg.apache.catalina.startup.ContextConfigÖĞÊÖ¶¯½«JSP½âÎöÆ÷³õÊ¼»¯£º
+2.è¿›å…¥localhost:xxx é¡µé¢æ— æ³•è¿›å…¥jspé¡µé¢æ²¡æœ‰åˆå§‹åŒ–,è§£å†³åŠæ³•æ˜¯åœ¨tomcatçš„æºç org.apache.catalina.startup.ContextConfigä¸­æ‰‹åŠ¨å°†JSPè§£æå™¨åˆå§‹åŒ–ï¼š
 
 context.addServletContainerInitializer(new JasperInitializer(), null)
-¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-°æÈ¨ÉùÃ÷£º±¾ÎÄÎªCSDN²©Ö÷¡¸ÎªÁË¸üºÃµÄÃ÷Ìì¶øÕ½¡¹µÄÔ­´´ÎÄÕÂ£¬×ñÑ­ CC 4.0 BY-SA °æÈ¨Ğ­Òé£¬×ªÔØÇë¸½ÉÏÔ­ÎÄ³ö´¦Á´½Ó¼°±¾ÉùÃ÷¡£
-Ô­ÎÄÁ´½Ó£ºhttps://blog.csdn.net/qq_33135813/article/details/88216149
+â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+ç‰ˆæƒå£°æ˜ï¼šæœ¬æ–‡ä¸ºCSDNåšä¸»ã€Œä¸ºäº†æ›´å¥½çš„æ˜å¤©è€Œæˆ˜ã€çš„åŸåˆ›æ–‡ç« ï¼Œéµå¾ª CC 4.0 BY-SA ç‰ˆæƒåè®®ï¼Œè½¬è½½è¯·é™„ä¸ŠåŸæ–‡å‡ºå¤„é“¾æ¥åŠæœ¬å£°æ˜ã€‚
+åŸæ–‡é“¾æ¥ï¼šhttps://blog.csdn.net/qq_33135813/article/details/88216149
 

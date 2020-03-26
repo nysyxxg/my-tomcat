@@ -38,11 +38,13 @@
   <role rolename="tomcat"/>
   <role rolename="role1"/>
   <role rolename="manager-gui"/>
+  <role rolename="admin-gui"/>
 
   <user username="tomcat" password="123456" roles="tomcat"/>
   <user username="both" password="123456" roles="tomcat,role1"/>
   <user username="role1" password="123456" roles="role1"/>
 
-  <user username="tomcat" password="s3cret" roles="manager-gui"/>
+  <user username="tomcat" password="123456" roles="manager-gui"/>
+  <user username="tomcat" password="123456" roles="admin-gui"/>
 
 </tomcat-users>

@@ -165,6 +165,8 @@
                prefix="localhost_access_log" suffix=".txt"
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
 
+        <!-- 第二种部署方式 -->
+        <Context path="/xxg"  docBase="E:\Tomcat9_Src\tomcat\test\mytest" ></Context>
       </Host>
     </Engine>
   </Service>

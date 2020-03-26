@@ -1,0 +1,70 @@
+
+添加VM options
+-Dcatalina.home=catalina-home
+-Dcatalina.base=catalina-home
+-Djava.endorsed.dirs=catalina-home/endorsed
+-Djava.io.tmpdir=catalina-home/temp
+-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+-Djava.util.logging.config.file=catalina-home/conf/logging.properties
+
+
+
+
+-Dcatalina.home=E://Tomcat9_Src//tomcat/
+-Dcatalina.base=E://Tomcat9_Src//tomcat
+-Djava.endorsed.dirs=E://Tomcat9_Src//tomcat/endorsed
+-Djava.io.tmpdir=E://Tomcat9_Src//tomcat/temp
+-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+-Djava.util.logging.config.file=E://Tomcat9_Src//tomcat/conf/logging.properties
+
+
+问题1：
+Error:java: Annotation processing is not supported for module cycles. Please ensure that all modules from cycle [WEB-INF,tomcat,WEB-INF1,dist,WEB-INF2] are excluded from annotation processing
+
+http://ddrv.cn/a/321782
+下面这个错误的大概意思是：模块之间的互相依赖
+
+Error:java: Annotation processing is not supported for module cycles. Please ensure that all modules from cycle [web_dao,web_service] are excluded from annotation processing
+
+处理模块之间的依赖关系（模块之间不能有依赖）
+
+问题2：
+E:\Tomcat9_Src\tomcat\java\org\apache\jasper\compiler\JDTCompiler.java
+Error:(320, 45) java: 找不到符号
+  符号:   变量 VERSION_9
+  位置: 类 org.eclipse.jdt.internal.compiler.impl.CompilerOptions
+  
+ 更改源代码
+Tomcat9中有部分代码使用CompilerOptions.VERSION_1_9  来判断java虚拟机版本，里面涉及1.9版本的jvm，我机器上识别不了。
+
+在java/org/apache/jasper/compiler/JDTCompiler.java类中把上述代码找出，删除即可，总共有3处。
+ 
+
+  
+
+问题3
+原因是我们直接启动org.apache.catalina.startup.Bootstrap的时候没有加载org.apache.jasper.servlet.JasperInitializer，从而无法编译JSP。
+
+解决办法是在tomcat的源码org.apache.catalina.startup.ContextConfig中的configureStart函数中手动将JSP解析器初始化：
+
+添加代码：context.addServletContainerInitializer(new JasperInitializer(), null);
+
+方法：     protected synchronized void configureStart() {
+  webConfig();
+        context.addServletContainerInitializer(new JasperInitializer(), null);
+
+问题4：
+
+Error:osgi: [tomcat] Invalid value for Bundle-Version, 10.0.0-M3-dev does not match [0-9]{1,9}(\.[0-9]{1,9}(\.[0-9]{1,9}(\.[0-9A-Za-z_-]+)?)?)?
+
+4.然后启动,可能会有以下错误
+
+1.Error:osgi: [apache-tomcat-8.5.20-src] Invalid value for Bundle-Version, @VERSION@ does not match [0-9]{1,9}(.[0-9]{1,9}(.[0-9]{1,9}(.[0-9A-Za-z_-]+)?)?)? 只需要将@version@改为1.1就可以用了
+
+2.进入localhost:xxx 页面无法进入jsp页面没有初始化,解决办法是在tomcat的源码org.apache.catalina.startup.ContextConfig中手动将JSP解析器初始化：
+
+context.addServletContainerInitializer(new JasperInitializer(), null)
+————————————————
+版权声明：本文为CSDN博主「为了更好的明天而战」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_33135813/article/details/88216149
+

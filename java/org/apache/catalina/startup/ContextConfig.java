@@ -111,6 +111,8 @@ import org.apache.tomcat.util.scan.JarFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXParseException;
 
+import  org.apache.jasper.servlet.JasperInitializer;
+
 /**
  * Startup event listener for a <b>Context</b> that configures the properties
  * of that Context, and the associated defined servlets.
@@ -772,7 +774,7 @@ public class ContextConfig implements LifecycleListener {
         }
 
         webConfig();
-
+        context.addServletContainerInitializer(new JasperInitializer(), null);
         if (!context.getIgnoreAnnotations()) {
             applicationAnnotationsConfig();
         }

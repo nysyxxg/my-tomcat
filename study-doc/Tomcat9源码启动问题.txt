@@ -71,3 +71,9 @@ context.addServletContainerInitializer(new JasperInitializer(), null)
 
 
 Tomcat8之后的IO操作默认是:NIO
+
+
+下载安装Tomcat的安装包，找到ecj-*.jar
+
+安装到本地：
+mvn install:install-file -Dfile=D:\Software_Dep\apache-tomcat-10.0.0-M3\lib\ecj-4.13.jar -DgroupId=org.eclipse.jdt.core.compiler -DartifactId=ecj  -Dversion=4.13 -Dpackaging=jar

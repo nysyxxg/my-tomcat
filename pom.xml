@@ -69,10 +69,16 @@
             <version>1.1</version>
         </dependency>
 
-        <dependency>
+        <!--<dependency>-->  <!--  本来的版本 -->
+            <!--<groupId>org.eclipse.jdt.core.compiler</groupId>-->
+            <!--<artifactId>ecj</artifactId>-->
+            <!--<version>4.6.1</version>-->
+        <!--</dependency>-->
+
+        <dependency>  <!-- 使用自己的安装到maven的jar   ecj-4.13.jar -->
             <groupId>org.eclipse.jdt.core.compiler</groupId>
             <artifactId>ecj</artifactId>
-            <version>4.6.1</version>
+            <version>4.13</version>
         </dependency>
 
         <dependency>

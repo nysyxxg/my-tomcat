@@ -20,7 +20,7 @@
   version="1.0">
 
   <!-- Output method -->
-  <xsl:output encoding="iso-8859-1"
+  <xsl:output encoding="UTF-8"
               indent="no"/>
 
   <xsl:template match="status">

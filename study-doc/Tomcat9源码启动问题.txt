@@ -1,12 +1,15 @@
 Tomcat的启动类：
 org.apache.catalina.startup.Bootstrap
 添加VM options
+-Dfile.encoding=GBK
 -Dcatalina.home=catalina-home
 -Dcatalina.base=catalina-home
 -Djava.endorsed.dirs=catalina-home/endorsed
 -Djava.io.tmpdir=catalina-home/temp
 -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
 -Djava.util.logging.config.file=catalina-home/conf/logging.properties
+-Duser.language=en
+-Duser.region=US
 
 
 
@@ -17,7 +20,8 @@ org.apache.catalina.startup.Bootstrap
 -Djava.io.tmpdir=E://Tomcat9_Src//tomcat/temp
 -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
 -Djava.util.logging.config.file=E://Tomcat9_Src//tomcat/conf/logging.properties
-
+-Duser.language=en
+-Duser.region=US
 
 问题1：
 Error:java: Annotation processing is not supported for module cycles. Please ensure that all modules from cycle [WEB-INF,tomcat,WEB-INF1,dist,WEB-INF2] are excluded from annotation processing

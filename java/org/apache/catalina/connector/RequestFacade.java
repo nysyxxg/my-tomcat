@@ -52,6 +52,7 @@ import org.apache.tomcat.util.res.StringManager;
  *
  * @author Craig R. McClanahan
  * @author Remy Maucherat
+ * 门面设计模式-- 又叫外观设计模式
  */
 @SuppressWarnings("deprecation")
 public class RequestFacade implements HttpServletRequest {

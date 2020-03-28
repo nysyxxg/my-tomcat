@@ -40,7 +40,7 @@
   <role rolename="manager-gui"/>
   <role rolename="admin-gui"/>
 
-  <user username="tomcat" password="123456" roles="tomcat"/>
+  <user username="tomcat" password="123456" roles="tomcat,manager-gui,admin-gui"/>
   <user username="both" password="123456" roles="tomcat,role1"/>
   <user username="role1" password="123456" roles="role1"/>
 

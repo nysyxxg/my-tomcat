@@ -71,6 +71,7 @@ import jakarta.servlet.ServletResponse;
  * <a href="http://java.sun.com/Series/Tutorial/java/threads/multithreaded.html">
  * Java Tutorial on Multithreaded Programming</a> for more
  * information on handling multiple threads in a Java program.
+ * 模板方法设计模式
  */
 public abstract class HttpServlet extends GenericServlet {
 

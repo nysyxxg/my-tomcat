@@ -107,7 +107,7 @@ request.setAttribute("tomcatExamplesUrl", "/examples/");
                         <p>For security, access to the <a href="/manager/html">manager webapp</a> is restricted.
                         Users are defined in:</p>
                         <pre>$CATALINA_HOME/conf/tomcat-users.xml</pre>
-                        <p>In Tomcat @VERSION_MAJOR_MINOR@ access to the manager application is split between
+                        <p>In Tomcat 10.0 access to the manager application is split between
                            different users. &nbsp; <a href="${tomcatDocUrl}manager-howto.html">Read more...</a></p>
                         <br />
                         <h4><a href="${tomcatDocUrl}RELEASE-NOTES.txt">Release Notes</a></h4>
@@ -119,16 +119,16 @@ request.setAttribute("tomcatExamplesUrl", "/examples/");
                 <div id="low-docs" class="">
                     <div class="curved container">
                         <h3>Documentation</h3>
-                        <h4><a href="${tomcatDocUrl}">Tomcat @VERSION_MAJOR_MINOR@ Documentation</a></h4>
-                        <h4><a href="${tomcatDocUrl}config/">Tomcat @VERSION_MAJOR_MINOR@ Configuration</a></h4>
+                        <h4><a href="${tomcatDocUrl}">Tomcat 10.0 Documentation</a></h4>
+                        <h4><a href="${tomcatDocUrl}config/">Tomcat 10.0 Configuration</a></h4>
                         <h4><a href="https://wiki.apache.org/tomcat/FrontPage">Tomcat Wiki</a></h4>
                         <p>Find additional important configuration information in:</p>
                         <pre>$CATALINA_HOME/RUNNING.txt</pre>
                         <p>Developers may be interested in:</p>
                         <ul>
-                            <li><a href="https://tomcat.apache.org/bugreport.html">Tomcat @VERSION_MAJOR_MINOR@ Bug Database</a></li>
-                            <li><a href="${tomcatDocUrl}api/index.html">Tomcat @VERSION_MAJOR_MINOR@ JavaDocs</a></li>
-                            <li><a href="https://github.com/apache/tomcat/tree/@GIT_BRANCH@">Tomcat @VERSION_MAJOR_MINOR@ Git Repository at GitHub</a></li>
+                            <li><a href="https://tomcat.apache.org/bugreport.html">Tomcat 10.0 Bug Database</a></li>
+                            <li><a href="${tomcatDocUrl}api/index.html">Tomcat 10.0 JavaDocs</a></li>
+                            <li><a href="https://github.com/apache/tomcat/tree/master">Tomcat 10.0 Git Repository at GitHub</a></li>
                         </ul>
                     </div>
                 </div>

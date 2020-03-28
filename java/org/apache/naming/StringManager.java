@@ -103,16 +103,21 @@ public class StringManager {
     public String getString(String key) {
         if(key == null){
             String msg = "key may not have a null value";
-
             throw new IllegalArgumentException(msg);
         }
 
-        String str = null;
 
+        String str = null;
         try {
             // Avoid NPE if bundle is null and treat it like an MRE
             if (bundle != null) {
                 str = bundle.getString(key);
+            }
+            // xxg  修改源码
+            try {
+                str = new String(str.getBytes("ISO-8859-1"), "UTF-8");
+            }catch(Exception e){
+                e.printStackTrace();
             }
         } catch(MissingResourceException mre) {
             //bad: shouldn't mask an exception the following way:
@@ -145,6 +150,12 @@ public class StringManager {
         String value = getString(key);
         if (value == null) {
             value = key;
+        }
+        // xxg  修改源码
+        try {
+            value = new String(value.getBytes("ISO-8859-1"), "UTF-8");
+        }catch(Exception e){
+            e.printStackTrace();
         }
 
         MessageFormat mf = new MessageFormat(value);

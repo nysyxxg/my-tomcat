@@ -166,8 +166,8 @@
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
 
         <!-- 第二种部署方式 -->
-        <Context path="/xxg"  docBase="E:\Tomcat9_Src\tomcat\test\mytest" ></Context>
-
+        <!--<Context path="/xxg"  docBase="E:\Tomcat9_Src\tomcat\test\mytest" ></Context>-->
+        <Context path="/test"  docBase="E:\MyWeb\myservlet\target\my-servlet-1.0" ></Context>
        </Host>
     </Engine>
   </Service>

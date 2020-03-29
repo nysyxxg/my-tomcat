@@ -481,19 +481,19 @@ public class HostConfig implements LifecycleListener {
             return;
         }
 
-        // Deploy XML descriptor from configBase
+        // Deploy XML descriptor from configBase  从xml配置中加载部署
         File xml = new File(configBase, baseName + ".xml");
         if (xml.exists()) {
-            deployDescriptor(cn, xml);
+            deployDescriptor(cn, xml);  // 描述符部署
             return;
         }
-        // Deploy WAR
+        // Deploy WAR  部署war
         File war = new File(appBase, baseName + ".war");
         if (war.exists()) {
             deployWAR(cn, war);
             return;
         }
-        // Deploy expanded folder
+        // Deploy expanded folder  从文件夹中部署
         File dir = new File(appBase, baseName);
         if (dir.exists())
             deployDirectory(cn, dir);

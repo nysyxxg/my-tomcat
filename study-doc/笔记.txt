@@ -1,0 +1,31 @@
+最顶层的生命周期接口： Lifecycle
+public interface Lifecycle {}
+
+最顶层的容器接口：Container
+public interface Container extends Lifecycle {
+
+
+Engine ----> Host ---> Context --->Wrapper ---->Servlet
+
+public interface Engine extends Container {}
+Engine
+  .....List<Host>
+
+public interface Host extends Container {}
+Host
+   .....List<Context>
+
+public interface Context extends Container, ContextBind {}
+Context
+    .....List<Wrapper>   wrappers;// 每一个warpper，都是对servlet的类的包装
+
+public interface Wrapper extends Container{}
+Wrapper
+    .....List<Servlet>   servlets;  // 每一个Servlet 都是用户的具体实现
+
+
+
+用户定义Servlet ： MyServlet
+MyServlet   extends  HttpServlet
+HttpServlet  extends GenericServlet   implements Servlet, ServletConfig,
+                                 java.io.Serializable

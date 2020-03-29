@@ -37,6 +37,7 @@ public interface ProtocolHandler {
     /**
      * Return the adapter associated with the protocol handler.
      * @return the adapter
+     * 使用适配器模式
      */
     public Adapter getAdapter();
 

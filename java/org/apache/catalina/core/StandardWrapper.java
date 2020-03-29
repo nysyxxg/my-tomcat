@@ -127,6 +127,7 @@ public class StandardWrapper extends ContainerBase
 
     /**
      * The (single) possibly uninitialized instance of this servlet.
+     * 创建 一个 servlet的实例
      */
     protected volatile Servlet instance = null;
 
@@ -207,6 +208,7 @@ public class StandardWrapper extends ContainerBase
 
     /**
      * Stack containing the STM instances.
+     *  使用栈 Stack  创建一个 包含 多个Servlet实例 的池
      */
     protected Stack<Servlet> instancePool = null;
 
@@ -759,7 +761,7 @@ public class StandardWrapper extends ContainerBase
 
                             // Note: We don't know if the Servlet implements
                             // SingleThreadModel until we have loaded it.
-                            instance = loadServlet();
+                            instance = loadServlet();  // 加载对应的Servlet的实例
                             newInstance = true;
                             if (!singleThreadModel) {
                                 // For non-STM, increment here to prevent a race
@@ -1039,7 +1041,7 @@ public class StandardWrapper extends ContainerBase
             }
 
             InstanceManager instanceManager = ((StandardContext)getParent()).getInstanceManager();
-            try {
+            try {  // 根据反射，对Servlet实例进行初始化
                 servlet = (Servlet) instanceManager.newInstance(servletClass);
             } catch (ClassCastException e) {
                 unavailable(null);

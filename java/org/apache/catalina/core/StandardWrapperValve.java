@@ -92,7 +92,7 @@ final class StandardWrapperValve
      */
     @Override
     public final void invoke(Request request, Response response)
-        throws IOException, ServletException {
+        throws IOException, ServletException {  // 这个方法是tomcat出来请求的核心处理方法
 
         // Initialize local variables we may need
         boolean unavailable = false;
@@ -132,7 +132,7 @@ final class StandardWrapperValve
         // Allocate a servlet instance to process this request
         try {
             if (!unavailable) {
-                servlet = wrapper.allocate();
+                servlet = wrapper.allocate();  // 通过wrapper 对象获取对应的Servlet实例
             }
         } catch (UnavailableException e) {
             container.getLogger().error(

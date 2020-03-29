@@ -129,6 +129,8 @@ public class CoyoteAdapter implements Adapter {
     public boolean asyncDispatch(org.apache.coyote.Request req, org.apache.coyote.Response res,
             SocketEvent status) throws Exception {
 
+        // 为什么这里可以强制转化？？
+        // 将 org.apache.coyote.Request req 转化为 org.apache.catalina.connector.Request request
         Request request = (Request) req.getNote(ADAPTER_NOTES);
         Response response = (Response) res.getNote(ADAPTER_NOTES);
 
@@ -302,7 +304,7 @@ public class CoyoteAdapter implements Adapter {
 
         Request request = (Request) req.getNote(ADAPTER_NOTES);
         Response response = (Response) res.getNote(ADAPTER_NOTES);
-
+        // 第一次肯定是null
         if (request == null) {
             // Create objects
             request = connector.createRequest();
@@ -314,7 +316,7 @@ public class CoyoteAdapter implements Adapter {
             request.setResponse(response);
             response.setRequest(request);
 
-            // Set as notes
+            // Set as notes  为了下次使用
             req.setNote(ADAPTER_NOTES, request);
             res.setNote(ADAPTER_NOTES, response);
 

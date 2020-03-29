@@ -410,7 +410,7 @@ public class StandardService extends LifecycleMBeanBase implements Service {
      */
     @Override
     protected void startInternal() throws LifecycleException {
-
+        System.out.println("******************** >> StandardService 的 startInternal 方法被调用....");
         if(log.isInfoEnabled())
             log.info(sm.getString("standardService.start.name", this.name));
         setState(LifecycleState.STARTING);
@@ -509,11 +509,11 @@ public class StandardService extends LifecycleMBeanBase implements Service {
      */
     @Override
     protected void initInternal() throws LifecycleException {
-
+        System.out.println("******************** >> StandardService 的 initInternal 方法被调用....");
         super.initInternal();
 
         if (engine != null) {
-            engine.init();
+            engine.init(); // 初始化 StandardEngine  Engine 的init
         }
 
         // Initialize any Executors
@@ -521,7 +521,7 @@ public class StandardService extends LifecycleMBeanBase implements Service {
             if (executor instanceof JmxEnabled) {
                 ((JmxEnabled) executor).setDomain(getDomain());
             }
-            executor.init();
+            executor.init(); // 初始化 Executor
         }
 
         // Initialize mapper listener

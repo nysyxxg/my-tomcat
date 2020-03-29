@@ -813,7 +813,7 @@ public class StandardHost extends ContainerBase implements Host {
      */
     @Override
     protected synchronized void startInternal() throws LifecycleException {
-
+        System.out.println("******************** >> StandardHost 的 startInternal 方法被调用....");
         // Set error report valve
         String errorValve = getErrorReportValveClass();
         if ((errorValve != null) && (!errorValve.equals(""))) {

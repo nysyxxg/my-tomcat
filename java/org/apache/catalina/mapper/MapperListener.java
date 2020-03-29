@@ -93,7 +93,7 @@ public class MapperListener extends LifecycleMBeanBase
 
     @Override
     public void startInternal() throws LifecycleException {
-
+        System.out.println("******************** >> MapperListener 的 startInternal 方法被调用....");
         setState(LifecycleState.STARTING);
 
         Engine engine = service.getContainer();

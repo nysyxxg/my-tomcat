@@ -57,7 +57,7 @@ public class Acceptor<U> implements Runnable {
 
     @Override
     public void run() {
-
+        System.out.println("******************** >> Acceptor Nio Socket 绑定端口：" + endpoint.getPort() + ", 接收请求。");
         int errorDelay = 0;
 
         // Loop until we receive a shutdown command
@@ -91,7 +91,7 @@ public class Acceptor<U> implements Runnable {
                 U socket = null;
                 try {
                     // Accept the next incoming connection from the server
-                    // socket
+                    // socket  接收客户端的请求
                     socket = endpoint.serverSocketAccept();
                 } catch (Exception ioe) {
                     // We didn't get a socket

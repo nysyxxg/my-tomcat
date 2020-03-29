@@ -1003,7 +1003,7 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
      */
     @Override
     protected void initInternal() throws LifecycleException {
-
+        System.out.println("******************** >> StandardServer 的 initInternal 方法被调用....");
         super.initInternal();
 
         // Initialize utility executor
@@ -1054,7 +1054,7 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
         }
         // Initialize our defined Services
         for (int i = 0; i < services.length; i++) {
-            services[i].init();
+            services[i].init();  // 调用 Service （StandardService ）的init
         }
     }
 

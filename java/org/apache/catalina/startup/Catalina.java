@@ -538,7 +538,7 @@ public class Catalina {
      * Start a new server instance.
      */
     public void load() {
-
+        System.out.println("******************** >> Catalina 的  load() 方法被调用....");
         if (loaded) {
             return;
         }
@@ -556,7 +556,7 @@ public class Catalina {
         File file = configFile();
 
         // Create and execute our Digester
-        Digester digester = createStartDigester();
+        Digester digester = createStartDigester();  // Digester 是tomcat的XML文件解析工具
 
         try (ConfigurationSource.Resource resource = ConfigFileLoader.getSource().getServerXml()) {
             InputStream inputStream = resource.getInputStream();
@@ -581,7 +581,7 @@ public class Catalina {
 
         // Start the new server
         try {
-            getServer().init();
+            getServer().init(); // 初始化Server - StandardServer  ，并调用init方法
         } catch (LifecycleException e) {
             if (Boolean.getBoolean("org.apache.catalina.startup.EXIT_ON_INIT_FAILURE")) {
                 throw new java.lang.Error(e);

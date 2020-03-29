@@ -164,6 +164,8 @@ public class NioEndpoint extends AbstractJsseEndpoint<NioChannel,SocketChannel> 
      */
     @Override
     public void bind() throws Exception {
+        System.out.println("******************** >> NioEndpoint 的 bind 方法被调用....");
+
         initServerSocket();
 
         setStopLatch(new CountDownLatch(1));
@@ -232,7 +234,7 @@ public class NioEndpoint extends AbstractJsseEndpoint<NioChannel,SocketChannel> 
             pollerThread.setPriority(threadPriority);
             pollerThread.setDaemon(true);
             pollerThread.start();
-
+            // 启动处理请求的 线程
             startAcceptorThread();
         }
     }

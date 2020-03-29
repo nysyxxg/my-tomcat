@@ -58,7 +58,7 @@ import org.apache.tomcat.util.threads.ThreadPoolExecutor;
  *            May be the same as U.
  * @param <U> The type of the underlying socket used by this endpoint. May be
  *            the same as S.
- *
+ *  这个抽象类作用： Coyote 通信端点，即通信监听的接口，是具体Socket 接收和发送的处理器，是对传输层的抽象，因此它是用来实现TCP/IP 协议的。
  * @author Mladen Turk
  * @author Remy Maucherat
  */
@@ -1199,7 +1199,9 @@ public abstract class AbstractEndpoint<S,U> {
         startInternal();
     }
 
-
+    /**
+     * 这个方法和tomcat 8 中不同，Acceptor在tomcat8中是一个抽象类
+     */
     protected void startAcceptorThread() {
         acceptor = new Acceptor<>(this);
         String threadName = getName() + "-Acceptor";

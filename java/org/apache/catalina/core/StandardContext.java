@@ -4807,7 +4807,7 @@ public class StandardContext extends ContainerBase
      */
     @Override
     protected synchronized void startInternal() throws LifecycleException {
-
+        System.out.println("******************** >> StandardContext 的 startInternal 方法被调用....");
         if(log.isDebugEnabled())
             log.debug("Starting " + getBaseName());
 
@@ -6096,6 +6096,7 @@ public class StandardContext extends ContainerBase
 
     @Override
     protected void initInternal() throws LifecycleException {
+        System.out.println("******************** >> StandardContext 的 initInternal 方法被调用....");
         super.initInternal();
 
         // Register the naming resources

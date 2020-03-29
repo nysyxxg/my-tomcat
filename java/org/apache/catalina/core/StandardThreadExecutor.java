@@ -106,6 +106,7 @@ public class StandardThreadExecutor extends LifecycleMBeanBase
 
     @Override
     protected void initInternal() throws LifecycleException {
+        System.out.println("******************** >> StandardThreadExecutor 的 initInternal 方法被调用....");
         super.initInternal();
     }
 
@@ -119,7 +120,7 @@ public class StandardThreadExecutor extends LifecycleMBeanBase
      */
     @Override
     protected void startInternal() throws LifecycleException {
-
+        System.out.println("******************** >> StandardThreadExecutor 的 startInternal 方法被调用....");
         taskqueue = new TaskQueue(maxQueueSize);
         TaskThreadFactory tf = new TaskThreadFactory(namePrefix,daemon,getThreadPriority());
         executor = new ThreadPoolExecutor(getMinSpareThreads(), getMaxThreads(), maxIdleTime, TimeUnit.MILLISECONDS,taskqueue, tf);

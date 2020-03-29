@@ -248,7 +248,7 @@ public final class Bootstrap {
      * @throws Exception Fatal initialization error
      */
     public void init() throws Exception {
-
+        System.out.println("******************** >> Bootstrap 的 init() 方法被调用....");
         initClassLoaders();
 
         Thread.currentThread().setContextClassLoader(catalinaLoader);
@@ -281,7 +281,7 @@ public final class Bootstrap {
      * Load daemon.
      */
     private void load(String[] arguments) throws Exception {
-
+        System.out.println("******************** >> Bootstrap 的 load(String[] arguments) 方法被调用....");
         // Call the load() method
         String methodName = "load";
         Object param[];
@@ -300,7 +300,7 @@ public final class Bootstrap {
         if (log.isDebugEnabled()) {
             log.debug("Calling startup class " + method);
         }
-        method.invoke(catalinaDaemon, param);
+        method.invoke(catalinaDaemon, param); // 通过反射 调用 Catalina的load方法
     }
 
 
@@ -324,7 +324,7 @@ public final class Bootstrap {
      * @throws Exception Fatal initialization error
      */
     public void init(String[] arguments) throws Exception {
-
+        System.out.println("******************** >> Bootstrap 的 init(String[] arguments) 方法被调用....");
         init();
         load(arguments);
     }
@@ -335,6 +335,7 @@ public final class Bootstrap {
      * @throws Exception Fatal start error
      */
     public void start() throws Exception {
+        System.out.println("******************** >> Bootstrap 的 start 方法被调用....");
         if (catalinaDaemon == null) {
             init();
         }

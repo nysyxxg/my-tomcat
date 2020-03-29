@@ -616,7 +616,7 @@ public class Catalina {
      * Start a new server instance.
      */
     public void start() {
-
+        System.out.println("******************** >> Catalina 的 start 方法被调用....");
         if (getServer() == null) {
             load();
         }

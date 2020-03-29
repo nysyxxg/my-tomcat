@@ -532,6 +532,7 @@ public abstract class AbstractProtocol<S> implements ProtocolHandler,
 
     @Override
     public void init() throws Exception {
+        System.out.println("******************** >> AbstractProtocol 的 init 方法被调用....");
         if (getLog().isInfoEnabled()) {
             getLog().info(sm.getString("abstractProtocolHandler.init", getName()));
             logPortOffset();
@@ -561,6 +562,7 @@ public abstract class AbstractProtocol<S> implements ProtocolHandler,
 
     @Override
     public void start() throws Exception {
+        System.out.println("******************** >> AbstractProtocol 的 start 方法被调用....");
         if (getLog().isInfoEnabled()) {
             getLog().info(sm.getString("abstractProtocolHandler.start", getName()));
             logPortOffset();

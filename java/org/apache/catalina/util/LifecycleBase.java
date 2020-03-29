@@ -127,6 +127,8 @@ public abstract class LifecycleBase implements Lifecycle {
 
     @Override
     public final synchronized void init() throws LifecycleException {
+
+        // System.out.println("******************** >> LifecycleBase 的 init 方法被调用....");
         if (!state.equals(LifecycleState.NEW)) {
             invalidTransition(Lifecycle.BEFORE_INIT_EVENT);
         }
@@ -144,7 +146,7 @@ public abstract class LifecycleBase implements Lifecycle {
     /**
      * Sub-classes implement this method to perform any instance initialisation
      * required.
-     *
+     *  这个是典型的模板方法设计模式，让子类去实现具体的逻辑
      * @throws LifecycleException If the initialisation fails
      */
     protected abstract void initInternal() throws LifecycleException;
@@ -155,7 +157,7 @@ public abstract class LifecycleBase implements Lifecycle {
      */
     @Override
     public final synchronized void start() throws LifecycleException {
-
+        // System.out.println("******************** >> LifecycleBase 的 start 方法被调用....");
         if (LifecycleState.STARTING_PREP.equals(state) || LifecycleState.STARTING.equals(state) ||
                 LifecycleState.STARTED.equals(state)) {
 
@@ -210,7 +212,7 @@ public abstract class LifecycleBase implements Lifecycle {
      * or it can place itself in the error state in which case {@link #stop()}
      * will be called on the failed component but the parent component will
      * continue to start normally.
-     *
+     *  启动服务的抽象方法
      * @throws LifecycleException Start error occurred
      */
     protected abstract void startInternal() throws LifecycleException;

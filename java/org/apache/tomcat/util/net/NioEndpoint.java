@@ -201,7 +201,7 @@ public class NioEndpoint extends AbstractJsseEndpoint<NioChannel,SocketChannel> 
      */
     @Override
     public void startInternal() throws Exception {
-
+        System.out.println("******************** >> NioEndpoint 的 startInternal 方法被调用....");
         if (!running) {
             running = true;
             paused = false;

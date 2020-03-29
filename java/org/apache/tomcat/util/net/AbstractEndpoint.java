@@ -1119,6 +1119,7 @@ public abstract class AbstractEndpoint<S,U> {
 
 
     public final void init() throws Exception {
+        System.out.println("******************** >> AbstractEndpoint 的 init 方法被调用....");
         if (bindOnInit) {
             bindWithCleanup();
             bindState = BindState.BOUND_ON_INIT;
@@ -1192,6 +1193,7 @@ public abstract class AbstractEndpoint<S,U> {
 
 
     public final void start() throws Exception {
+        System.out.println("******************** >> AbstractEndpoint 的 start 方法被调用....");
         if (bindState == BindState.UNBOUND) {
             bindWithCleanup();
             bindState = BindState.BOUND_ON_START;

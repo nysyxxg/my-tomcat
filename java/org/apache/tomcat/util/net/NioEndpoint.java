@@ -1497,6 +1497,7 @@ public class NioEndpoint extends AbstractJsseEndpoint<NioChannel,SocketChannel> 
     /**
      * This class is the equivalent of the Worker, but will simply use in an
      * external Executor thread pool.
+     * 处理请求的核心方法
      */
     protected class SocketProcessor extends SocketProcessorBase<NioChannel> {
 
@@ -1506,6 +1507,7 @@ public class NioEndpoint extends AbstractJsseEndpoint<NioChannel,SocketChannel> 
 
         @Override
         protected void doRun() {
+            System.out.println("******************** >>  开始处理请求：" + event.name() );
             NioChannel socket = socketWrapper.getSocket();
             SelectionKey key = socket.getIOChannel().keyFor(socket.getSocketWrapper().getPoller().getSelector());
             Poller poller = NioEndpoint.this.poller;

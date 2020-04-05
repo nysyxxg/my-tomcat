@@ -167,7 +167,7 @@ public class JspServletWrapper {
     private boolean getReloadInternal() {
         return reload && !ctxt.getRuntimeContext().isCompileCheckInProgress();
     }
-
+    // 获取对应的Servlet实例对象
     public Servlet getServlet() throws ServletException {
         /*
          * DCL on 'reload' requires that 'reload' be volatile

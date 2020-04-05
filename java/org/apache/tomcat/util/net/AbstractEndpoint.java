@@ -1068,7 +1068,8 @@ public abstract class AbstractEndpoint<S,U> {
             }
             Executor executor = getExecutor();
             if (dispatch && executor != null) {
-                executor.execute(sc);
+                System.out.println("******************** >>  提交到线程池中：" + event.name()+ ",开始处理....");
+                executor.execute(sc);// 提交到线程池中执行
             } else {
                 sc.run();
             }

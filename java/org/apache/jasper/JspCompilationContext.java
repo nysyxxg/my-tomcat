@@ -211,6 +211,7 @@ public class JspCompilationContext {
      * Create a "Compiler" object based on some init param data. This
      * is not done yet. Right now we're just hardcoding the actual
      * compilers that are created.
+     * 创建对应的编译器
      * @return the Java compiler wrapper
      */
     public Compiler createCompiler() {
@@ -592,7 +593,7 @@ public class JspCompilationContext {
     }
 
     // ==================== Compile and reload ====================
-
+    // 编译文件
     public void compile() throws JasperException, FileNotFoundException {
         createCompiler();
         if (jspCompiler.isOutDated()) {
@@ -602,7 +603,7 @@ public class JspCompilationContext {
             try {
                 jspCompiler.removeGeneratedFiles();
                 jspLoader = null;
-                jspCompiler.compile();
+                jspCompiler.compile();  // 生成jsp对应的Servlet，并进行编译
                 jsw.setReload(true);
                 jsw.setCompilationException(null);
             } catch (JasperException ex) {

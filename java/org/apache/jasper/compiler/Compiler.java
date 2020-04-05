@@ -102,7 +102,7 @@ public abstract class Compiler {
      * Compile the jsp file into equivalent servlet in .java file
      *
      * @return A map of class names to JSR 045 source maps
-     *
+     *  根据jsp文件生成对应的java文件
      * @throws Exception Error generating Java source
      */
     protected Map<String,SmapStratum> generateJava() throws Exception {
@@ -365,7 +365,7 @@ public abstract class Compiler {
     /**
      * Compile the jsp file from the current engine context. As an side- effect,
      * tag files that are referenced by this page are also compiled.
-     *
+     *  根据jsp文件，先生成java文件，然后进行编译
      * @param compileClass
      *            If true, generate both .java and .class file If false,
      *            generate only .java file

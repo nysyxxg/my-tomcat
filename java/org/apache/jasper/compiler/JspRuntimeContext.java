@@ -354,6 +354,7 @@ public final class JspRuntimeContext {
     /**
      * Method used by background thread to check the JSP dependencies
      * registered with this class for JSP's.
+     * 检查jsp文件是否编译
      */
     public void checkCompile() {
 

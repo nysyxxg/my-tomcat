@@ -92,6 +92,7 @@ public class Acceptor<U> implements Runnable {
                 try {
                     // Accept the next incoming connection from the server
                     // socket  接收客户端的请求
+                    System.out.println("******************** >> Acceptor 绑定端口：" + endpoint.getPort() + ", 接收请求。");
                     socket = endpoint.serverSocketAccept();
                 } catch (Exception ioe) {
                     // We didn't get a socket
